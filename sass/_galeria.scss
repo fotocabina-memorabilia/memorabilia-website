@@ -1,0 +1,85 @@
+
+
+/* Type
+================================ */
+
+
+
+/* Layout & Style
+================================ */
+
+.galeria-wrapper{
+	padding-bottom: 25px;
+}
+// .pinterest-widget > span {
+// 	width:100%; overflow: hidden;
+// }
+// .pinterest-widget > span > span { 
+// 	width: auto !important; 
+// 	overflow: hidden;
+// }
+
+// .clearing-blackout, .clearing-caption,.clearing-assembled .clearing-container .visible-img {
+//   background: $beige;
+//  }
+
+//  .clearing-caption, .clearing-close, .clearing-close:hover, .clearing-close:focus, .clearing-main-prev > span, .clearing-main-next > span {
+//   color: $cafe-oscuro;
+//  }
+
+// .clearing-main-next > span {
+// 	border-left-color: $beige;
+// }
+
+// .clearing-main-prev > span {
+// 	border-right-color: $beige;
+// }
+
+.clearing-assembled .clearing-container .carousel {
+    background: $cafe-oscuro;
+ }
+
+.galeria-shadow img {
+	@include box-shadow(3px 3px 6px rgba(0,0,0,0.7));
+}
+
+
+.galeria-pinit{
+	margin-top: -50px;
+	margin-right: 20px;
+}
+
+
+/* Logos & Icons
+================================= */
+
+
+/* Form
+================================= */
+
+
+
+/* Buttons
+================================= */
+
+
+
+
+/* Media Queries
+================================= */
+// Medium and up
+@mixin mq-641px-galeria {
+
+
+}
+
+// End Medium and up
+
+
+
+// Device Retina
+@mixin mq-retina-galeria {
+
+	
+}
+// End Device Retina

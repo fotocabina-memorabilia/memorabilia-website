@@ -1,0 +1,17 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// Compass Modules
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/typography";
+@import "compass/layout";
+@import "retina-sprites";
+
+// Partials
+@import "normalize";
+@import "foundation";
+@import "my_styles_master";
+

@@ -1,0 +1,93 @@
+
+
+/* Type
+================================ */
+.preguntas-text-alt{
+	color: $headline-text-color;
+
+	a{
+		color: $a-color;
+	}
+}
+
+
+/* Layout & Style
+================================ */
+.preguntas-y-respuestas{
+	padding-bottom: 30px;
+}
+
+.content {
+	background: $bg-color !important;
+}
+
+
+
+a[href^="#panel"]{
+
+	background: $cafe-claro !important;
+	padding: 5px !important;
+	transition-duration: 0.1s;
+
+	&:hover{
+		background: $cafe-oscuro !important;
+	}
+	border: solid 1px $cafe-oscuro;
+
+	h2{
+		font-size: 1.4rem;
+		color: $beige;
+		margin-top: 0px;
+		margin-bottom: 3px;
+	}
+}
+
+
+/* Logos & Icons
+================================= */
+
+.arrow {
+	font-size: 0.7rem;
+	position: relative;
+	bottom: 3px;
+	left: 6px;
+}
+
+ .arrow:after {
+ 	content: "▼"; 
+ }
+
+
+/* Form
+================================= */
+
+
+
+/* Buttons
+================================= */
+
+
+
+
+/* Media Queries
+================================= */
+// Medium and up
+@mixin mq-641px-preguntas_frecuentes {
+
+	a[href^="#panel"]{
+		h2{
+			font-size: 1.5rem;
+		}
+	}
+
+
+}
+// End medium and up
+
+
+// Device Retina
+@mixin mq-retina-preguntas_frecuentes {
+
+	
+}
+// End Device Retina

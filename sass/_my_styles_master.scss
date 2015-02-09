@@ -1,0 +1,49 @@
+/* Importacion de todos los estidos propios
+================================= */
+@import "variables";
+@import "icon-fonts";
+@import "globals";
+@import "home";
+@import "recordatorios";
+@import "galeria";
+@import "preguntas_frecuentes";
+@import "contacto";
+@import "planes";
+
+
+
+/* Media Queries
+================================= */
+
+// Medium and up
+@media (min-width: 641px) {
+		@include mq-641px-globals;
+		@include mq-641px-home;	
+		@include mq-641px-recordatorios;
+		@include mq-641px-galeria;
+		@include mq-641px-preguntas_frecuentes;
+		@include mq-641px-contacto;
+		@include mq-641px-planes;
+}
+// End Medium and up
+
+// Large and up
+@media only screen and (min-width: 1025px) { 
+	@include mq-1025px-home;	
+}
+// End Large an up
+
+
+
+// Device Retina
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), sreen and (min-resolution: 144 dpi) {
+	@include mq-retina-globals;
+	@include mq-retina-home;
+	@include mq-retina-recordatorios;	
+	@include mq-retina-galeria;
+	@include mq-retina-preguntas_frecuentes;
+	@include mq-retina-contacto;
+	@include mq-retina-planes;
+
+}
+// End Device Retina

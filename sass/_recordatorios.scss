@@ -1,0 +1,82 @@
+
+
+/* Type
+================================ */
+
+
+
+/* Layout & Style
+================================ */
+.rec-para-ti{
+	margin-top: 60px;
+	padding-bottom: 20px;
+}
+
+.rec-div-adj {
+	margin-top: 30px;
+}
+
+
+/* Logos & Icons
+================================= */
+
+.img-rec-dim {
+	height: 200px;
+}
+
+/* Form
+================================= */
+
+
+
+/* Buttons
+================================= */
+
+
+
+
+/* Media Queries
+================================= */
+// Small and up
+@mixin mq-641px-recordatorios {
+
+	.rec-para-ti{
+		margin-top: 50px;
+
+	}
+
+	.rec-div-adj {
+
+	margin-top: 0px;
+	}
+
+	.rec-planes {
+
+		padding-top: 15px;
+		padding-bottom: 15px;
+		border-top: 1px solid $cafe-claro;
+
+		& div:nth-child(3) {
+			padding-top: 20px;
+
+		}
+	}
+
+	.img-rec-dim {
+
+	height: 250px;
+	}
+
+}
+
+
+// End small and up
+
+
+
+// Device Retina
+@mixin mq-retina-recordatorios {
+
+	
+}
+// End Device Retina

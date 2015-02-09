@@ -1,0 +1,235 @@
+
+
+/* Type
+================================ */
+
+// Top bar
+
+.top-bar-section ul li>a, 
+.toggle-topbar a
+ {
+	font-family: 'Quicksand', sans-serif;
+}
+// End Top Bar
+
+
+// Content
+h1, h2 {
+	font-family: 'Sofia', cursive;
+	color: $h1-color;
+	text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+h3 {
+	font-family: 'Sofia', cursive;
+	color: $h1-color;
+}
+
+
+p,li {
+	font-family: 'Quicksand', sans-serif;
+	color: $p-color;
+}
+
+.lead {
+	margin-top: 20px;
+}
+
+h1 small {
+	font-family: 'Sofia', cursive;
+	color: $h1-color;
+	text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	font-size: 0.8em;
+}
+
+// End Content
+
+
+/* Layout & Style
+================================ */
+// Top bar 
+
+.top-bar, .top-bar-section li a:not(.button), 
+.top-bar-section ul li>a, 
+.contain-to-grid,
+.title-area {
+    background: $nav-bg-color !important;
+    
+}
+
+.contain-to-grid {
+	border-bottom: 3px solid $nav-border-color;
+}
+
+.top-bar-section li a:not(.button):hover,
+.top-bar-section ul li.active > a,
+.top-bar-section ul li.active > a:hover{
+    background: $active-color !important;   
+}
+
+.logo {
+	display: inline-block;
+	margin-left: 15px;
+	@include replace-text('memorabilia_logo.png');
+	width: image-width('memorabilia_logo.png') !important;
+}
+
+
+body {
+
+	background-color: $bg-color;
+}
+
+
+// End Top bar
+
+// Content
+.wrapper {
+	background-color: $bg-color;
+}
+
+.banner-content-start{
+	padding-top:15px;
+}
+
+// End Content
+
+
+// Footer
+@include sticky-footer(140px, ".wrapper", ".root-footer", ".main-footer");
+
+footer{
+	padding: 20px 0;
+	background: $footer-color;
+
+	p{
+		margin: 0;
+		color: $p-color-alt;
+		font-size: 0.9em;
+	}
+}
+// End Footer
+
+
+/* Logos & Icons
+================================= */
+
+.icon-arrow-down, 
+.icon-arrow-down:visited,
+.icon-arrow-down2, 
+.icon-arrow-down2:visited,  
+.icon-facebook2, 
+.icon-facebook2:visited,
+.icon-pinterest2,
+.icon-pinterest2:visited {
+	color: $beige;
+	font-size: 2em;
+}
+
+.icon-arrow-down2, 
+.icon-arrow-down2:visited {
+	font-size: 2.5em;
+}
+
+
+.icon-phone{
+	display: inline-block;
+	@include replace-text('telefono.svg');
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+
+.icon-mail{
+	display: inline-block;
+	@include replace-text('mail.svg');
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+
+.icon-hover {
+	transition-duration: 0.1s;
+
+	&:hover{
+		@include box-shadow(inset 0px 0px 0px 3px rgba($cafe-oscuro,1));
+	}
+}
+
+.icon-hover-footer {
+	transition-duration: 0.1s;
+
+	&:hover{
+		@include box-shadow(0px 0px 0px 3px rgba($cafe-oscuro,1));
+	}
+}
+
+.social{
+	border-radius: 8px;
+	display: inline-block;
+	font-size: 3rem;
+	margin: 10px 15px 20px 20px;
+}
+
+/* Form
+================================= */
+
+
+
+/* Buttons
+================================= */
+.button{
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.dark-btn{
+	color: $dark-btn-txt-color;
+	background: $dark-btn-bg-color;
+
+	&:hover{
+		background: $dark-btn-hover-bg-color;
+
+	}
+}
+
+.light-btn {
+	color: $light-btn-txt-color;
+	background: $light-btn-bg-color;
+
+	&:hover{
+		background: $light-btn-hover-bg-color;	
+	}
+}
+
+.light2-btn {
+	color: $light2-btn-txt-color;
+	background: $light2-btn-bg-color;
+
+	&:hover{
+		background: $light2-btn-hover-bg-color;	
+	}
+}
+
+
+/* Media Queries
+================================= */
+// medium and up
+@mixin mq-641px-globals {
+
+
+}
+// End medium and up
+
+
+// Device Retina
+@mixin mq-retina-globals {
+
+	.logo {
+		@include replace-text('memorabilia_logo_2x.png');
+		background-size: 141px 35px;
+	}
+	
+}
+// End Device Retina

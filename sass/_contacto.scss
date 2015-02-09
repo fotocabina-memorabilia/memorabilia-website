@@ -1,0 +1,140 @@
+
+
+/* Type
+================================ */
+
+.contacto-page1 h1, .contacto-page1 p, .contacto-page1 a{
+
+	color: $headline-text-color;
+}
+
+
+
+/* Layout & Style
+================================ */
+
+
+.contacto-correo {
+	font-size: 0.75em;
+}
+
+.contacto-page1{
+
+	padding-bottom: 25px;
+}
+
+.contacto-page2{
+
+	background: $azul;
+
+	h1, p{
+		color: $p-color-alt;
+	}
+}
+
+.contacto-page3, .contacto-page2{
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.contacto-headline{
+	@include background(image-url("bg_inicio_phone.jpg"), $bg-color-alt);
+	background-repeat: no-repeat;
+	background-size: cover;
+	@include box-shadow(inset 0 0 0 1000px rgba(0,0,0,0.5));
+}
+
+.contacto-aliado{
+	margin: 15px 0px;
+	@include box-shadow(3px 3px 6px rgba(0,0,0,0.8));
+}
+
+
+/* Logos & Icons
+================================= */
+
+.icons-sprite-tel{
+	@include use-sprite("sprite-tel", true);
+}
+
+.icons-sprite-mail{
+	@include use-sprite("sprite-mail", true);
+}
+
+.icons-sprite-pinterest{
+	@include use-sprite("sprite-pinterest", true);
+}
+
+.icons-sprite-facebook{
+	@include use-sprite("sprite-facebook", true);
+}
+
+.icons-sprite-sergio{
+	@include use-sprite("sprite-sergio", true);
+}
+
+.icons-sprite-julian{
+	@include use-sprite("sprite-julian", true);
+}
+
+.icons-sprite-ricardo{
+	@include use-sprite("sprite-ricardo", true);
+}
+
+.contacto-icon-adj{
+	display: inline-block;
+	width: 120px;
+	height: 120px;
+	@include hide-text;
+	border-radius: 50%;
+}
+
+.nosotros-icon-adj{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	@include hide-text;
+	border-radius: 100%;
+	@include box-shadow(3px 3px 6px);
+}
+
+
+/* Form
+================================= */
+
+
+
+/* Buttons
+================================= */
+
+
+
+
+/* Media Queries
+================================= */
+// Small and up
+@mixin mq-641px-contacto {
+		.contacto-headline{
+		@include background(image-url("bg_inicio.jpg"), $bg-color-alt);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+
+	}
+
+
+}
+
+
+// End small and up
+
+
+
+// Device Retina
+@mixin mq-retina-contacto {
+
+	// Las versiones retina de los íconos se incluyen dentro del mixin @include use-sprite;
+
+	
+}
+// End Device Retina

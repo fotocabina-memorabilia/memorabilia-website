@@ -1,0 +1,42 @@
+//DEFINICION DE VARIABLES PARA TODO SCSS//
+
+//--Layout Variables
+$legacy-support-for-mozilla: false;
+$legacy-support-for-ie: false;
+$experimental-support-for-opera: false;
+
+//--Paleta de colores
+$cafe-oscuro: #534741;
+$cafe-claro: #b29887;
+$beige: #fff8f4;
+$azul: #75b1b1;
+$azul-claro: #dbfeff;
+
+//--Relacion de colores con partes del markup
+$nav-text-color: $beige;
+$nav-bg-color: $cafe-claro;
+$nav-border-color: $cafe-oscuro;
+$active-color: $cafe-oscuro;
+$bg-color: $beige;
+$bg-color-alt: $cafe-claro;
+$h1-color: $cafe-oscuro;
+$h2-color: $cafe-oscuro;
+$p-color: $cafe-oscuro;
+$p-color-alt: $beige;
+$headline-text-color: $beige;
+$dark-btn-bg-color: $cafe-claro;
+$dark-btn-hover-bg-color: $azul;
+$dark-btn-txt-color: $beige;
+$light-btn-bg-color: $beige;
+$light-btn-hover-bg-color: $cafe-claro;
+$light-btn-txt-color: $cafe-oscuro;
+$light2-btn-bg-color: $beige;
+$light2-btn-hover-bg-color: $cafe-oscuro;
+$light2-btn-txt-color: $cafe-oscuro;
+$footer-color: gray;
+$a-color: $azul-claro;
+
+
+//--Type Styles Variables
+$base-font-size: 16px;
+$base-line-height: 24px;
