@@ -26,7 +26,7 @@ h3 {
 }
 
 
-p,li {
+p,li,label,input[type="number"] {
 	font-family: 'Quicksand', sans-serif;
 	color: $p-color;
 }

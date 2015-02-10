@@ -80,17 +80,92 @@
 
       <!-- Inicio APP -->
 
-      <!-- Inicio Sección 1 - Cuántos invitados tienes? -->
+      <!-- Inicio Sección 1 - Forma de input de información -->
 
-      <!-- Fin Sección 1 - Cuántos invitados tienes? -->
+      <div class="planes-page-1">
+        <div class="row">
 
-      <!-- Inicio Sección 2 - Elije los recordatorios para tus invitados -->
+          <!-- Inicio Form -->
 
-      <!-- Fin Sección 2 - Elije los recordatorios para tus invitados -->
+          <form action = "index.html" method = "post">
+            
+            <!-- Inicio Field 1 - Cuántos invitados tienes? -->
+            
+            <fieldset>
+              <legend><h2>Cuántos invitados tienes?</h2></legend>
+              <div class="columns small-6 large-offset-3">
+                <label id="cantidad-de=invitados" for="cantidad-de-invitados"> Ingresa la cantidad en números</label>
+                <input type="number" min="1" max="400">
+              </div>
 
-      <!-- Inicio Sección 3 - Elije tus recordatorios -->
-      
-      <!-- Fin Sección 3 - Elije tus recordatorios -->
+            </fieldset>
+            
+            <!-- Fin Field 1 - Cuántos invitados tienes? --> 
+
+            <!-- Inicio Field 2 - Cómo quieres entregar los recordatorios? -->
+            <fieldset>
+              <legend><h2>Cómo quieres entregar los recordatorios a tus invitados?</h2></legend>
+              
+              <div class="columns small-4 text-center">
+                <label for="invitados-clasico"> Clásico</label>
+                <input type="radio" id="invitados-clasico" value="invitados-clasico" name="recordatorios-invitados">
+              </div>
+
+              <div class="columns small-4 text-center">
+                <label for="invitados-sobre"> Sobre</label>
+                <input type="radio" id="invitados-sobre" value="invitados-sobre" name="recordatorios-invitados">
+              </div>
+
+              <div class="columns small-4 text-center">
+                <label for="invitados-portarretratos"> Portarretratos</label>
+                <input type="radio" id="invitados-portarretratos" value="invitados-portarretratos" name="recordatorios-invitados">
+              </div>
+
+            </fieldset>
+
+            <!-- Fin Field 2 - Cómo quieres entregar los recordatorios? -->
+
+            <!-- Inicio Field 3 - Cómo quieres recibir tus recordatorios? -->
+
+            <fieldset>
+              <legend><h2>Cómo quieres recibir tus recordatorios?</h2></legend>
+              
+              <div class="columns small-4 text-center">
+                <label for="cliente-clasico"> Clásico</label>
+                <input type="radio" id="cliente-clasico" value="cliente-clasico" name="recordatorios-cliente">
+              </div>
+
+              <div class="columns small-4 text-center">
+                <label for="cliente-cuadro"> Cuadro</label>
+                <input type="radio" id="cliente-cuadro" value="cliente-cuadro" name="recordatorios-cliente">
+              </div>
+
+              <div class="columns small-4 text-center">
+                <label for="cliente-album"> Álbum</label>
+                <input type="radio" id="cliente-album" value="cliente-album" name="recordatorios-cliente">
+              </div>
+
+            </fieldset>
+
+            <!-- Fin Field 3 - Cómo quieres recibir tus recordatorios? -->
+
+          </form>
+          <!-- Fin Form -->
+        </div>
+      </div>
+
+      <!-- Fin Sección 1 - Forma de input de información -->
+
+      <!-- Inicio Sección 2 - Resultados de cálculo de precio -->
+
+      <div class="planes-page-2">
+        <div class="row">
+          <h2>El costo de tu plan es:</h2>
+        </div>
+      </div>
+
+      <!-- Fin Sección 2 - Resultados de cálculo de precio -->
+
 
       <!-- Fin APP -->
 

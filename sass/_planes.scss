@@ -67,6 +67,27 @@ div[class*="planes-page-"] {
 /* Form
 ================================= */
 
+form {
+	background: none;
+}
+
+legend {
+	background-color: tomato;
+}
+
+fieldset{
+	border:none;
+}
+
+input[type="number"]{
+	background: adjust-lightness($cafe-claro, 15%);
+	height: 50px;
+	font-size: 1.3em;
+	text-align: center;
+}
+
+
+
 
 
 /* Buttons
