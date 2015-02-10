@@ -71,8 +71,13 @@ form {
 	background: none;
 }
 
+form img{
+	opacity: 0.5;
+}
+
+
 legend {
-	background-color: tomato;
+	background-color: $beige !important;
 }
 
 fieldset{
@@ -86,8 +91,27 @@ input[type="number"]{
 	text-align: center;
 }
 
+.input_hidden {
+    position: absolute;
+    left: -9999px;
+}
 
+.selected {
+    img{
+    	opacity: 1;
+    }
+}
 
+#opciones-invitados label, #opciones-cliente label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#opciones-invitados label img, #opciones-cliente label img {
+    padding: 3px;
+    height: 150px;
+    width: 150px;
+}
 
 
 /* Buttons

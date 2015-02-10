@@ -93,8 +93,8 @@
             
             <fieldset>
               <legend><h2>Cuántos invitados tienes?</h2></legend>
-              <div class="columns small-6 large-offset-3">
-                <label id="cantidad-de=invitados" for="cantidad-de-invitados"> Ingresa la cantidad en números</label>
+              <div class="columns small-8 large-offset-2">
+                <label id="label-cantidad-de=invitados" for="cantidad-de-invitados"> Ingresa la cantidad en números</label>
                 <input type="number" min="1" max="400">
               </div>
 
@@ -105,20 +105,18 @@
             <!-- Inicio Field 2 - Cómo quieres entregar los recordatorios? -->
             <fieldset>
               <legend><h2>Cómo quieres entregar los recordatorios a tus invitados?</h2></legend>
-              
-              <div class="columns small-4 text-center">
-                <label for="invitados-clasico"> Clásico</label>
-                <input type="radio" id="invitados-clasico" value="invitados-clasico" name="recordatorios-invitados">
-              </div>
 
-              <div class="columns small-4 text-center">
-                <label for="invitados-sobre"> Sobre</label>
-                <input type="radio" id="invitados-sobre" value="invitados-sobre" name="recordatorios-invitados">
-              </div>
+              <div class="columns small-10 large-offset-1 text-center" id="opciones-invitados">
+                
+                  <label for="invitados-clasico"><img src="img/planes_tira_sola.svg"><br>Clásico</label>
+                  <input type="radio" id="i-c" value="invitados-clasico" name="recordatorios-invitados">
 
-              <div class="columns small-4 text-center">
-                <label for="invitados-portarretratos"> Portarretratos</label>
-                <input type="radio" id="invitados-portarretratos" value="invitados-portarretratos" name="recordatorios-invitados">
+                  <label for="invitados-sobre"><img src="img/planes_tira_sobre.svg"><br>Sobre</label>
+                  <input type="radio" id="i-s" value="invitados-sobre" name="recordatorios-invitados">
+
+                  <label for="invitados-portarretratos"> <img src="img/planes_tira_portarretratos.svg"><br>Portarretratos</label>
+                  <input type="radio" id="i-p" value="invitados-portarretratos" name="recordatorios-invitados">
+                <!-- </div> -->
               </div>
 
             </fieldset>
@@ -130,19 +128,17 @@
             <fieldset>
               <legend><h2>Cómo quieres recibir tus recordatorios?</h2></legend>
               
-              <div class="columns small-4 text-center">
-                <label for="cliente-clasico"> Clásico</label>
-                <input type="radio" id="cliente-clasico" value="cliente-clasico" name="recordatorios-cliente">
-              </div>
+              <div class="columns small-10 large-offset-1 text-center" id="opciones-cliente">              
+                
+                  <label for="cliente-clasico"> <img src="img/planes_tiras_many.svg"><br>Clásico</label>
+                  <input type="radio" id="cliente-clasico" value="cliente-clasico" name="recordatorios-cliente">
 
-              <div class="columns small-4 text-center">
-                <label for="cliente-cuadro"> Cuadro</label>
-                <input type="radio" id="cliente-cuadro" value="cliente-cuadro" name="recordatorios-cliente">
-              </div>
+                  <label for="cliente-cuadro"> <img src="img/planes_marco.svg"><br>Cuadro</label>
+                  <input type="radio" id="cliente-cuadro" value="cliente-cuadro" name="recordatorios-cliente">
 
-              <div class="columns small-4 text-center">
-                <label for="cliente-album"> Álbum</label>
-                <input type="radio" id="cliente-album" value="cliente-album" name="recordatorios-cliente">
+                  <label for="cliente-album"><img src="img/planes_libro.svg"> <br>Álbum</label>
+                  <input type="radio" id="cliente-album" value="cliente-album" name="recordatorios-cliente">
+
               </div>
 
             </fieldset>
@@ -160,7 +156,10 @@
 
       <div class="planes-page-2">
         <div class="row">
-          <h2>El costo de tu plan es:</h2>
+          <h2 class="columns small-12 text-center">El costo de tu plan es:</h2>
+        </div>
+        <div class="row">
+          <p id="precio-final" class="columns small-12 text-center lead">2,000,000 de pesos</p>
         </div>
       </div>
 
@@ -239,6 +238,8 @@
     <script>
       $(document).foundation();
     </script>
+    <!-- app.js import -->
+    <script src="js/app.js"></script>
     <!-- End Import Scripts -->
 
   </body>
