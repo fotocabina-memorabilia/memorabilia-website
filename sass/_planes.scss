@@ -69,12 +69,12 @@ div[class*="planes-page-"] {
 
 form {
 	background: none;
+	color: $beige !important;
 }
 
 form img{
 	opacity: 0.5;
 }
-
 
 legend {
 	background-color: $beige !important;
@@ -84,11 +84,25 @@ fieldset{
 	border:none;
 }
 
-input[type="number"]{
-	background: adjust-lightness($cafe-claro, 15%);
+input[type="tel"]{
+	background: adjust-lightness($cafe-claro, 7%);
 	height: 50px;
 	font-size: 1.3em;
 	text-align: center;
+}
+
+// input[type=number]::-webkit-inner-spin-button, 
+// input[type=number]::-webkit-outer-spin-button { 
+//   -webkit-appearance: none; 
+//   margin: 0; 
+// }
+
+#opciones-invitados label:hover {
+    opacity: 1;
+}
+
+input:focus{
+	background: adjust-lightness($cafe-claro, 15%) !important;
 }
 
 .input_hidden {
@@ -107,11 +121,18 @@ input[type="number"]{
     cursor: pointer;
 }
 
+#opciones-invitados label:hover, #opciones-cliente label:hover {
+	img{
+		opacity: 1;
+	}
+}
+
 #opciones-invitados label img, #opciones-cliente label img {
     padding: 3px;
     height: 150px;
     width: 150px;
 }
+
 
 
 /* Buttons
