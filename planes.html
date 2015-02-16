@@ -96,8 +96,8 @@
               <div class="columns small-8 large-offset-2">
                 <label for="cantidad-de-invitados"> Ingresa la cantidad en números</label>
                 <input type="tel" id="cantidadDeInvitados" >
-                <span class="span-un-invitado">Debes tener más de 1 invitado</span>
-                <span class="span-muchos-invitados">Tienes más de 170 invitados! Contáctanos directamente para hacer una cotización especial.</span>
+                <span class="span-planes span-un-invitado">Debes escribir un valor superior a 1.</span>
+                <span class="span-planes span-muchos-invitados">Tienes más de 170 invitados! Contáctanos directamente para hacer una cotización especial.</span>
               </div>
 
             </fieldset>
@@ -105,11 +105,12 @@
             <!-- Fin Field 1 - Cuántos invitados tienes? --> 
 
             <!-- Inicio Field 2 - Cómo quieres entregar los recordatorios? -->
-            <fieldset>
-              <legend><h2>Cómo quieres entregar los recordatorios a tus invitados?</h2></legend>
+            <div id="opciones">
+              <fieldset>
+                <legend><h2>Cómo quieres entregar los recordatorios a tus invitados?</h2></legend>
 
-              <div class="columns small-10 large-offset-1 text-center" id="opciones-invitados">
-                
+                <div class="columns small-10 large-offset-1 text-center" id="opciones-invitados">
+
                   <label for="invitados-clasico"><img src="img/planes_tira_sola.svg"><br>Clásico</label>
                   <input type="radio" id="invitadosClasico" value="invitados-clasico" name="recordatorios-invitados">
 
@@ -118,20 +119,20 @@
 
                   <label for="invitados-portarretratos"> <img src="img/planes_tira_portarretratos.svg"><br>Portarretratos</label>
                   <input type="radio" id="invitadosPortarretratos" value="invitados-portarretratos" name="recordatorios-invitados">
-                <!-- </div> -->
-              </div>
+                  <!-- </div> -->
+                </div>
 
-            </fieldset>
+              </fieldset>
 
-            <!-- Fin Field 2 - Cómo quieres entregar los recordatorios? -->
+              <!-- Fin Field 2 - Cómo quieres entregar los recordatorios? -->
 
-            <!-- Inicio Field 3 - Cómo quieres recibir tus recordatorios? -->
+              <!-- Inicio Field 3 - Cómo quieres recibir tus recordatorios? -->
 
-            <fieldset>
-              <legend><h2>Cómo quieres recibir tus recordatorios?</h2></legend>
-              
-              <div class="columns small-10 large-offset-1 text-center" id="opciones-cliente">              
-                
+              <fieldset>
+                <legend><h2>Cómo quieres recibir tus recordatorios?</h2></legend>
+
+                <div class="columns small-10 large-offset-1 text-center" id="opciones-cliente">              
+
                   <label for="cliente-clasico"> <img src="img/planes_tiras_many.svg"><br>Clásico</label>
                   <input type="radio" id="clienteClasico" value="cliente-clasico" name="recordatorios-cliente">
 
@@ -141,9 +142,10 @@
                   <label for="cliente-album"><img src="img/planes_libro.svg"> <br>Álbum</label>
                   <input type="radio" id="clienteAlbum" value="cliente-album" name="recordatorios-cliente">
 
-              </div>
+                </div>
 
-            </fieldset>
+              </fieldset>
+            </div>
 
             <!-- Fin Field 3 - Cómo quieres recibir tus recordatorios? -->
 
@@ -154,9 +156,22 @@
 
       <!-- Fin Sección 1 - Forma de input de información -->
 
-      <!-- Inicio Sección 2 - Resultados de cálculo de precio -->
+      <!-- Inicio Sección 2 - Si hay mas de 170 invitados -->
+      <div id="plan-especial" class="planes-page-2">
+        <div class="row">
+          <h2 class="columns small-12 text-center">Haz un plan especial</h2>
+        </div>
+        <div class="row">
+          <p class="columns small-12 text-center lead">Contáctanos directamente para cotizar un plan para más de 170 personas</p>
+          <p class="text-center"><a class="icon-mail icon-hover" href="mailto:fotocabina.memorabilia@gmail.com">Contacto</a></p>
+        </div>
+      </div>
 
-      <div class="planes-page-2">
+      <!-- Fin Sección 2 - Si hay mas de 170 invitados -->
+
+      <!-- Inicio Sección 3 - Resultados de cálculo de precio -->
+
+      <div id="costo-final-del-plan" class="planes-page-3">
         <div class="row">
           <h2 class="columns small-12 text-center">El costo de tu plan es:</h2>
         </div>
@@ -165,7 +180,7 @@
         </div>
       </div>
 
-      <!-- Fin Sección 2 - Resultados de cálculo de precio -->
+      <!-- Fin Sección 3 - Resultados de cálculo de precio -->
 
 
       <!-- Fin APP -->

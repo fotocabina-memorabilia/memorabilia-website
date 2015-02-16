@@ -15,19 +15,25 @@ $('#opciones-cliente label').click(function(){
 // Problema: La página aún no es interactiva. 
 // Solución: Agregar interactividad a la página para que el usurario conozca el costo de su plan personalizado.
 
-//Hide hints
-$("form span").hide();
+//Hide hints & important divs
+$(".span-planes").hide();
+$("#plan-especial").hide();
+$("#costo-final-del-plan").hide();
+
+// Variables
+
+var $cantidadDeInvitados = $("#cantidadDeInvitados").val();
 
 // Ingresar un número de invitados
+	// Verificar
+		// If valor <= 0 ---> show hint
+		// else --> hide hint
 
-	//Cuando la persona ingresa un número
-		// Verificar
-			// If valor <= 0 ---> Tooltip que indique que hay que poner un valor mayor a 0
-			// guardar número de invitados en variable cantidadDeInvitados
-				// else if valor es menor que 70 --> guardar 650,000 en variable precioBase
-				// else if valor es entre 71 y 120 --> guardar 7700,000 en variable precioBase
-				// else if valor es entre 120 y 170  --> guardar 840,000 en variable precioBase
-				// else if valor es mayor que 170 --> Pedir que nos contacten directamente
+	// guardar número de invitados en variable cantidadDeInvitados
+		// if valor es menor que 70 --> guardar valor de plan1 en variable precioBase
+		// else if valor es entre 71 y 120 --> guardar valor de plan2 en variable precioBase
+		// else if valor es entre 120 y 170  --> guardar valor de plan3 en variable precioBase
+		// else  --> Pedir que nos contacten directamente
 
 // Seleccionar tipo de recordatorio para sus invitados
 

@@ -130,7 +130,7 @@ input:focus{
 /* Tooltips
 ================================= */
 
-span {
+.span-planes {
 	border-radius: 5px;
 	display: block;
 	font-size: 1em;
@@ -154,7 +154,7 @@ span {
 	width: 250px;
 }
 
-span:after {
+.span-planes:after {
 	right: 100%;
 	top: 50%;
 	border: solid transparent;
