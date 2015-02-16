@@ -76,9 +76,74 @@ $cantidadDeInvitados.keyup(cantidadEsValida).keyup(masDe170).keyup($precioBase);
 
 // Seleccionar tipo de recordatorio para sus invitados
 
-$('#element').click(function() {
-   if($('#radio_button').is(':checked')) { alert("it's checked"); }
-});
+var $precioRecordatoriosInvitados = function(){
+	$('#invitadosClasico').click(function() {
+		if($('#invitadosClasico').is(':checked')) { 
+			// console.log(0);
+			$precioRecordatoriosInvitados = 0;
+		}
+	});
+
+	$('#invitadosSobre').click(function() {
+		if($('#invitadosSobre').is(':checked')) { 
+			// console.log(1000);
+			$precioRecordatoriosInvitados = 1000;
+		}
+	});
+
+	$('#invitadosPortarretratos').click(function() {
+		if($('#invitadosPortarretratos').is(':checked')) { 
+			// console.log(1200);
+			$precioRecordatoriosInvitados = 1200;
+		}
+	});
+
+};
+
+$precioRecordatoriosInvitados();
+
+
+var $precioRecordatoriosCliente = function(){
+	$('#clienteClasico').click(function() {
+		if($('#clienteClasico').is(':checked')) { 
+			// console.log(0);
+			$precioRecordatoriosCliente = 0;
+		}
+	});
+
+	$('#clienteCuadro').click(function() {
+		if($('#clienteCuadro').is(':checked')) { 
+			// console.log(110000);
+			$precioRecordatoriosCliente = 110000;
+		}
+	});
+
+	$('#clienteAlbum').click(function() {
+		if($('#clienteAlbum').is(':checked')) { 
+			// console.log(160000);
+			$precioRecordatoriosCliente = 160000;
+		}
+	});
+
+};
+
+$precioRecordatoriosCliente();
+
+
+
+var $precioFinal = function(){
+	$("#cotizar").click(function(){
+		$precioBase + $precioRecordatoriosCliente + $precioRecordatoriosInvitados * parseInt( $cantidadDeInvitados.val() );
+		console.log("Preciooooo final");
+	});
+	
+};
+
+$precioFinal();
+
+ 
+
+
 
 	// if eligen clasico --> agregar 0 a variable precioRecordatoriosInvitados
 		// else if eligen sobre --> agregar valor de variable precioSobre a variable precioRecordatoriosInvitados
@@ -90,7 +155,7 @@ $('#element').click(function() {
 		// else if eligen cuadro --> agregar valor de variable precioCuadro a variable precioRecordatoriosCliente
 		// else if eligen álbum --> agregar valor de variable precioAlbum a variable precioRecordatoriosCliente
 
-// Ver costo del plan: costo del plan es: precioBase + precioRecordatoriosInvitados*cantidadDeInvitados + precioRecordatoriosCliente
+// Ver costo del plan: costo del plan es: $precioBase + p$recioRecordatoriosInvitados*cantidadDeInvitados + $precioRecordatoriosCliente
 	// Append <p> con precio del plan
 
 
