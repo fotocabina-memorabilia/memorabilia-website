@@ -145,14 +145,14 @@ input:focus{
 }
 
 .span-un-invitado {
-	top: 14px;
+	top: 4px;
 	width: 160px;
 }
 
-.span-muchos-invitados {
-	top: 5px;
-	width: 250px;
-}
+// .span-muchos-invitados {
+// 	top: 5px;
+// 	width: 250px;
+// }
 
 .span-planes:after {
 	right: 100%;
@@ -164,7 +164,7 @@ input:focus{
 	position: absolute;
 	pointer-events: none;
 	border-color: rgba(136, 183, 213, 0);
-	border-right-color: $cafe-oscuro;
+	border-right-color: $azul;
 	border-width: 8px;
 	margin-top: -8px;
 }
