@@ -95,6 +95,7 @@ $cantidadDeInvitados.keyup(function(){
 	var cantidadDeInvitados = parseInt($cantidadDeInvitados.val());
 
 	if (cantidadDeInvitados<=0 || isNaN($cantidadDeInvitados.val()) ||  $cantidadDeInvitados.val().length === 0){
+
 		$(".span-planes").show();
 	} 
 	else if (cantidadDeInvitados>170) {
