@@ -2,12 +2,12 @@
 
 $('#opciones-invitados input:radio').addClass('input_hidden');
 $('#opciones-invitados label').click(function(){
-    $(this).addClass('selected').siblings().removeClass('selected');
+	$(this).addClass('selected').siblings().removeClass('selected');
 });
 
 $('#opciones-cliente input:radio').addClass('input_hidden');
 $('#opciones-cliente label').click(function(){
-    $(this).addClass('selected').siblings().removeClass('selected');
+	$(this).addClass('selected').siblings().removeClass('selected');
 });
 
 // ========== Inicio app ==========
@@ -78,7 +78,7 @@ var $precioBase = function(){
 };
 
 $cantidadDeInvitados.keyup(cantidadEsValida).keyup(masDe170).keyup($precioBase);
- JULIAN **/
+JULIAN **/
 
 // SERGIO
 $cantidadDeInvitados.keyup(function(){
@@ -93,40 +93,38 @@ $cantidadDeInvitados.keyup(function(){
 		// ocultar tooltip
 		// Se establece el precio base
 
-	var cantidadDeInvitados = parseInt($cantidadDeInvitados.val());
+		var cantidadDeInvitados = parseInt($cantidadDeInvitados.val());
 
-	if (cantidadDeInvitados<=0 || isNaN($cantidadDeInvitados.val()) ||  $cantidadDeInvitados.val().length === 0){
+		if (cantidadDeInvitados<=0 || isNaN($cantidadDeInvitados.val()) ||  $cantidadDeInvitados.val().length === 0){
 
-		$(".span-planes").show();
-	} 
-	else if (cantidadDeInvitados>170) {
-		$(".span-planes").hide();
-		$("#opciones").hide();
-		$("#plan-especial").show();
-	}
-	else {
-		$(".span-planes").hide();
-		if (cantidadDeInvitados > 0 && cantidadDeInvitados <= 70){
-			precioBase = plan1;
-			$(".span-planes").hide();
-			$("#opciones").show();
-			$("#plan-especial").hide();
+			$(".span-planes").show();
 		} 
-		else if(cantidadDeInvitados > 70 && cantidadDeInvitados <= 119){
-			precioBase = plan2;
+		else if (cantidadDeInvitados>170) {
 			$(".span-planes").hide();
-			$("#opciones").show();
-			$("#plan-especial").hide();
-		} 
-		else {
-			precioBase = plan3;
-			$(".span-planes").hide();
-			$("#opciones").show();
-			$("#plan-especial").hide();
+			$("#opciones").hide();
+			$("#plan-especial").show();
 		}
-	}
+		else {
+			
+			$(".span-planes").hide();
+			$("#opciones").show();
+			$("#plan-especial").hide();
+			$(".span-planes").hide();
 
-});
+			if (cantidadDeInvitados > 0 && cantidadDeInvitados <= 70){
+				precioBase = plan1;
+			} 
+			else if(cantidadDeInvitados > 70 && cantidadDeInvitados <= 119){
+				precioBase = plan2;
+
+			} 
+			else {
+				precioBase = plan3;
+
+			}
+		}
+
+	});
 // SERGIO
 
 
@@ -197,7 +195,7 @@ var $precioFinal = function(){
 
 $precioFinal();
 
- 
+
 
 
 
