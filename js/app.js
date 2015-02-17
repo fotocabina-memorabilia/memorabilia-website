@@ -24,10 +24,13 @@ $("#costo-final-del-plan").hide();
 
 var $cantidadDeInvitados = $("#cantidadDeInvitados");
 
-var $plan1 = 650000;
-var $plan2 = 770000;
-var $plan3 = 840000;
 
+//SERGIO
+var plan1 = 650000;
+var plan2 = 770000;
+var plan3 = 840000;
+var precioBase = plan1;
+// SERGIO
 
 
 // var precioSobre
@@ -38,6 +41,7 @@ var $plan3 = 840000;
 
 // Ingresar un número de invitados y mostrar Tooltip
 
+/** JULIAN
 function validacionCantidad(){
 	return parseInt($cantidadDeInvitados.val()) > 0;
 }
@@ -73,6 +77,47 @@ var $precioBase = function(){
 };
 
 $cantidadDeInvitados.keyup(cantidadEsValida).keyup(masDe170).keyup($precioBase);
+ JULIAN **/
+
+// SERGIO
+$cantidadDeInvitados.keyup(function(){
+
+	// El valor no es un número o es un número menor a 0
+		// Mostrar tooltip
+	// El valor es un número mayor a 170
+		// ocultar tooltip
+		// ocultar otras opciones
+		// mostrar plan especial
+	// Else
+		// ocultar tooltip
+		// Se establece el precio base
+
+	var cantidadDeInvitados = parseInt($cantidadDeInvitados.val());
+
+	if (cantidadDeInvitados<=0 || isNaN($cantidadDeInvitados.val()) ||  $cantidadDeInvitados.val().length === 0){
+		$(".span-planes").show();
+	} 
+	else if (cantidadDeInvitados>170) {
+		$(".span-planes").hide();
+		$("#opciones").hide();
+		$("#plan-especial").show();
+	}
+	else {
+		$(".span-planes").hide();
+		if (cantidadDeInvitados > 0 && cantidadDeInvitados <= 70){
+			precioBase = plan1;
+		} 
+		else if(cantidadDeInvitados > 70 && cantidadDeInvitados <= 119){
+			precioBase = plan2;
+		} 
+		else {
+			precioBase = plan3;
+		}
+	}
+
+});
+// SERGIO
+
 
 // Seleccionar tipo de recordatorio para sus invitados
 
