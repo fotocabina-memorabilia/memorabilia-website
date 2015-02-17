@@ -1,15 +1,3 @@
-//=========== Clases para agregar estilos==============
-
-$('#opciones-invitados input:radio').addClass('input_hidden');
-$('#opciones-invitados label').click(function(){
-	$(this).addClass('selected').siblings().removeClass('selected');
-});
-
-$('#opciones-cliente input:radio').addClass('input_hidden');
-$('#opciones-cliente label').click(function(){
-	$(this).addClass('selected').siblings().removeClass('selected');
-});
-
 // ========== Inicio app ==========
 
 // Problema: La página aún no es interactiva. 
@@ -23,64 +11,85 @@ $("#plan-especial").hide();
 
 var $cantidadDeInvitados = $("#cantidadDeInvitados");
 
+var $labels = $("label");
+
+var $outputPrecio = $("#precio-final");
 
 //SERGIO
 var plan1 = 650000;
 var plan2 = 770000;
 var plan3 = 840000;
 var precioBase = plan1;
-// SERGIO
 
+var precioInvitadoClasico = 0;
+var precioInvitadoSobre = 1000;
+var precioInvitadoPortarretratos = 1200;
+var precioRecordatoriosInvitados = precioInvitadoClasico;
 
-// var precioSobre
-// var precioPortarretratos
+var precioClienteClasico = 0;
+var precioClienteCuadro = 110000;
+var precioClienteAlbum = 160000;
+var precioRecordatoriosCliente = precioClienteClasico;
 
-// var precioCuadro = 110000;
-// var precioAlbum = 160000;
+var precioFinal = precioBase + precioRecordatoriosInvitados*parseInt($cantidadDeInvitados.val()) + precioRecordatoriosCliente;
 
-// Ingresar un número de invitados y mostrar Tooltip
+// Functions
 
-/** JULIAN
-function validacionCantidad(){
-	return parseInt($cantidadDeInvitados.val()) > 0;
-}
+function actualizarRecordatorioInvitados(){
 
-function cantidadEsValida(){
-	if(!validacionCantidad()){
-		$(".span-planes").show();
+	if($('#invitadosClasico').is(':checked')){
+		precioRecordatoriosInvitados = precioInvitadoClasico;
+		// console.log(precioRecordatoriosInvitados);
+	} else if($('#invitadosSobre').is(':checked')){
+		precioRecordatoriosInvitados = precioInvitadoSobre;
+		// console.log(precioRecordatoriosInvitados);
 	} else {
-		$(".span-planes").hide();
+		precioRecordatoriosInvitados = precioInvitadoPortarretratos;
+		// console.log(precioRecordatoriosInvitados);
 	}
 }
 
-function masDe170(){
-	if(parseInt($cantidadDeInvitados.val()) > 170){
-		$("#opciones").hide();
-		$("#costo-final-del-plan").hide();
-		$("#plan-especial").show();
-	} else{
-		$("#opciones").show();
-		$("#costo-final-del-plan").show();
-		$("#plan-especial").hide();
-	}
-}
+function actualizarRecordatorioCliente(){
 
-// Definición de precioBase
-
-var $precioBase = function(){
-	if (parseInt($cantidadDeInvitados.val()) > 0 && parseInt($cantidadDeInvitados.val()) <= 70){
-		$precioBase = $plan1;
-	} else if(parseInt($cantidadDeInvitados.val()) > 70 && parseInt($cantidadDeInvitados.val()) <= 119){
-		$precioBase = $plan2;
+	if($('#clienteClasico').is(':checked')){
+		precioRecordatoriosCliente = precioClienteClasico;
+		// console.log(precioRecordatoriosCliente);
+	} else if($('#clienteCuadro').is(':checked')){
+		precioRecordatoriosCliente = precioClienteCuadro;
+		// console.log(precioRecordatoriosCliente);
 	} else {
-		$precioBase = $plan3;
+		precioRecordatoriosCliente = precioClienteAlbum;
+		// console.log(precioRecordatoriosCliente);
 	}
-};
+}
 
-$cantidadDeInvitados.keyup(cantidadEsValida).keyup(masDe170).keyup($precioBase);
-JULIAN **/
+function actualizarPrecioFinal(precioBaseP, precioRecordatoriosInvitadosP, precioRecordatoriosClienteP, cantidadDeInvitadosP){
+	if(isNaN(cantidadDeInvitadosP) || cantidadDeInvitadosP<=0 || cantidadDeInvitadosP.length === 0){
+		$outputPrecio.html("Ingresa la cantidad de invitados para obtener el valor.");
+	} else {
+	precioFinal = precioBaseP + precioRecordatoriosInvitadosP*cantidadDeInvitadosP + precioRecordatoriosClienteP;
+	// console.log(precioFinal);
 
-// SERGIO
+// ====== Start --> Este código formatea números normales a moneda
+
+	var DecimalSeparator = Number("1.2").toLocaleString().substr(1,1);
+
+	var AmountWithCommas = precioFinal.toLocaleString();
+	var arParts = String(AmountWithCommas).split(DecimalSeparator);
+	var intPart = arParts[0];
+	// var decPart = (arParts.length > 1 ? arParts[1] : '');
+	// decPart = (decPart + '00').substr(0,2);
+
+	var precioFormateado =  '$ ' + intPart ;
+
+// ====== End --> Este código formatea números normales a moneda
+
+	$outputPrecio.html("El precio de tu plan es: " + precioFormateado + " COP.");
+}
+}
+
+// End Functions
+
 $cantidadDeInvitados.keyup(function(){
 
 	// El valor no es un número o es un número menor a 0
@@ -98,18 +107,24 @@ $cantidadDeInvitados.keyup(function(){
 		if (cantidadDeInvitados<=0 || isNaN($cantidadDeInvitados.val()) ||  $cantidadDeInvitados.val().length === 0){
 
 			$(".span-planes").show();
+			// $("#tooltip-mobile").show();
+			$outputPrecio.html("Ingresa la cantidad de invitados para obtener el valor.");
 		} 
 		else if (cantidadDeInvitados>170) {
+
 			$(".span-planes").hide();
+			// $("#tooltip-mobile").hide();
 			$("#opciones").hide();
+			$("#costo-final-del-plan").hide();
 			$("#plan-especial").show();
 		}
 		else {
 			
 			$(".span-planes").hide();
+			// $("#tooltip-mobile").hide();
 			$("#opciones").show();
 			$("#plan-especial").hide();
-			$(".span-planes").hide();
+			$("#costo-final-del-plan").show();
 
 			if (cantidadDeInvitados > 0 && cantidadDeInvitados <= 70){
 				precioBase = plan1;
@@ -122,105 +137,25 @@ $cantidadDeInvitados.keyup(function(){
 				precioBase = plan3;
 
 			}
+			actualizarPrecioFinal(precioBase, precioRecordatoriosInvitados, precioRecordatoriosCliente, parseInt($cantidadDeInvitados.val()));
 		}
 
 	});
-// SERGIO
-
-
-// Seleccionar tipo de recordatorio para sus invitados
-
-var $precioRecordatoriosInvitados = function(){
-	$('#invitadosClasico').click(function() {
-		if($('#invitadosClasico').is(':checked')) { 
-			// console.log(0);
-			$precioRecordatoriosInvitados = 0;
-		}
-	});
-
-	$('#invitadosSobre').click(function() {
-		if($('#invitadosSobre').is(':checked')) { 
-			// console.log(1000);
-			$precioRecordatoriosInvitados = 1000;
-		}
-	});
-
-	$('#invitadosPortarretratos').click(function() {
-		if($('#invitadosPortarretratos').is(':checked')) { 
-			// console.log(1200);
-			$precioRecordatoriosInvitados = 1200;
-		}
-	});
-
-};
-
-$precioRecordatoriosInvitados();
-
-
-var $precioRecordatoriosCliente = function(){
-	$('#clienteClasico').click(function() {
-		if($('#clienteClasico').is(':checked')) { 
-			// console.log(0);
-			$precioRecordatoriosCliente = 0;
-		}
-	});
-
-	$('#clienteCuadro').click(function() {
-		if($('#clienteCuadro').is(':checked')) { 
-			// console.log(110000);
-			$precioRecordatoriosCliente = 110000;
-		}
-	});
-
-	$('#clienteAlbum').click(function() {
-		if($('#clienteAlbum').is(':checked')) { 
-			// console.log(160000);
-			$precioRecordatoriosCliente = 160000;
-		}
-	});
-
-};
-
-$precioRecordatoriosCliente();
 
 
 
-var $precioFinal = function(){
-	$("#cotizar").click(function(){
-		$precioBase + $precioRecordatoriosCliente + $precioRecordatoriosInvitados * parseInt( $cantidadDeInvitados.val() );
-		// console.log("Preciooooo final");
-	});
+$labels.click(function(){
 	
-};
+	setTimeout(actualizarRecordatorioInvitados, 200);
+	setTimeout(actualizarRecordatorioCliente, 200);
+	setTimeout(function(){
+		actualizarPrecioFinal(precioBase, precioRecordatoriosInvitados, precioRecordatoriosCliente, parseInt($cantidadDeInvitados.val()));
+	}, 200);
 
-$precioFinal();
+});
 
-
-
-
-
-	// if eligen clasico --> agregar 0 a variable precioRecordatoriosInvitados
-		// else if eligen sobre --> agregar valor de variable precioSobre a variable precioRecordatoriosInvitados
-		// else if eligen portarretratos --> agregar valor de variable precioPortarretratos a variable precioRecordatoriosInvitados
-
-// Seleccionar tipo de recordatorio para él/ella
-
-	// if eligen clasico --> agregar 0 a variable precioRecordatoriosCliente
-		// else if eligen cuadro --> agregar valor de variable precioCuadro a variable precioRecordatoriosCliente
-		// else if eligen álbum --> agregar valor de variable precioAlbum a variable precioRecordatoriosCliente
-
-// Ver costo del plan: costo del plan es: $precioBase + p$recioRecordatoriosInvitados*cantidadDeInvitados + $precioRecordatoriosCliente
-	// Append <p> con precio del plan
-
-
-
-
-
-
-
-
-
-
+actualizarRecordatorioInvitados();
+actualizarRecordatorioCliente();
 
 
 
