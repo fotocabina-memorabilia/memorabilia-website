@@ -18,7 +18,6 @@ $('#opciones-cliente label').click(function(){
 //Hide hints & important divs
 $(".span-planes").hide();
 $("#plan-especial").hide();
-$("#costo-final-del-plan").hide();
 
 // Variables
 
@@ -57,9 +56,11 @@ function cantidadEsValida(){
 function masDe170(){
 	if(parseInt($cantidadDeInvitados.val()) > 170){
 		$("#opciones").hide();
+		$("#costo-final-del-plan").hide();
 		$("#plan-especial").show();
 	} else{
 		$("#opciones").show();
+		$("#costo-final-del-plan").show();
 		$("#plan-especial").hide();
 	}
 }
@@ -107,12 +108,21 @@ $cantidadDeInvitados.keyup(function(){
 		$(".span-planes").hide();
 		if (cantidadDeInvitados > 0 && cantidadDeInvitados <= 70){
 			precioBase = plan1;
+			$(".span-planes").hide();
+			$("#opciones").show();
+			$("#plan-especial").hide();
 		} 
 		else if(cantidadDeInvitados > 70 && cantidadDeInvitados <= 119){
 			precioBase = plan2;
+			$(".span-planes").hide();
+			$("#opciones").show();
+			$("#plan-especial").hide();
 		} 
 		else {
 			precioBase = plan3;
+			$(".span-planes").hide();
+			$("#opciones").show();
+			$("#plan-especial").hide();
 		}
 	}
 
@@ -180,7 +190,7 @@ $precioRecordatoriosCliente();
 var $precioFinal = function(){
 	$("#cotizar").click(function(){
 		$precioBase + $precioRecordatoriosCliente + $precioRecordatoriosInvitados * parseInt( $cantidadDeInvitados.val() );
-		console.log("Preciooooo final");
+		// console.log("Preciooooo final");
 	});
 	
 };
