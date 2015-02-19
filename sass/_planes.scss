@@ -53,6 +53,22 @@ div[class*="planes-page-"] {
 }
 
 
+.rnd{
+	border-radius: 15%;
+}
+
+hr{
+	border-color: $cafe-claro;
+}
+
+li{
+	color: $beige;
+}
+
+.planes-page-6 li{
+	color: $cafe-oscuro;
+}
+
 /* Logos & Icons
 ================================= */
 
@@ -94,9 +110,6 @@ input[type="tel"]{
 	}
 }
 
-#opciones-invitados label:hover {
-	opacity: 1;
-}
 
 input:focus{
 	background: adjust-lightness($cafe-claro, 15%) !important;
@@ -119,9 +132,29 @@ input:focus{
 	width: 150px;
 }
 
+#plan-sugerido label {
+	border-radius: 15%;
+	width: 80%;
+	background-color: $cafe-oscuro;
+	border: 4px solid $cafe-oscuro;
+	margin: 5px;
+	padding: 15px;
+	cursor: default;
+	li, h3 {
+		color: $beige;
+	}
+}
+
+#plan-sugerido label:hover, #plan-sugerido input[type="radio"]:checked + label{
+	background-color: $azul;
+	// border: 4px solid $cafe-oscuro;
+}
+
+
 input[type="radio"]{
 	visibility:hidden;
 }
+
 
 
 /* Tooltips
@@ -140,38 +173,6 @@ input[type="radio"]{
 	padding: 7px 10px;
 	color: $beige;
 }
-
-// }
-// backup====================
-// .span-planes {
-// 	border-radius: 5px;
-// 	display: block;
-// 	font-size: 1em;
-// 	text-align: center;
-// 	position: absolute;
-// 	background: $azul;
-// 	left: 100%;
-// 	top: 14px;
-// 	width: 160px;
-// 	padding: 7px 10px;
-// 	color: $beige;
-// }
-
-// .span-planes:after {
-// 	right: 100%;
-// 	top: 50%;
-// 	border: solid transparent;
-// 	content: " ";
-// 	height: 0;
-// 	width: 0;
-// 	position: absolute;
-// 	pointer-events: none;
-// 	border-color: rgba(136, 183, 213, 0);
-// 	border-right-color: $azul;
-// 	border-width: 8px;
-// 	margin-top: -8px;
-// }
-
 
 /* Buttons
 ================================= */

@@ -76,21 +76,26 @@
   <div class="wrapper"> 
 
     <!-- Elige tu plan -->
-    <h1 class="columns small-12 text-center banner-content-start">Planes</h1>
+    <div class="row">
+      <h1 class="columns small-12 text-center banner-content-start">Planes</h1>
+      <p class="text-center"> Cotiza el plan perfecto para tu matrimonio</p>
+      <hr>
+    </div>
+    
 
     <!-- Inicio APP -->
 
     <!-- Inicio Sección 1 - Forma de input de información -->
 
     <div class="planes-page-1">
-      <div class="row">
+      
 
         <!-- Inicio Form -->
 
         <form id="formulario" action = "index.html" method = "post">
 
           <!-- Inicio Field 1 - Cuántos invitados tienes? -->
-
+      <div class="row">
           <fieldset>
             <legend><h2>Cuántos invitados tienes?</h2></legend>
             <div class="columns small-6 large-offset-3 small-centered">
@@ -99,12 +104,63 @@
               <span class="span-planes">Debes escribir un número superior a 1</span>
               <!-- <div id="tooltip-mobile" class="planes-page-5 small-centered show-for-small-only">Debes escribir un número superior a 1</div> -->
             </div>
-
-          </fieldset>
+            </fieldset>
+      </div>
+          
 
           <!-- Fin Field 1 - Cuántos invitados tienes? --> 
 
-          <!-- Inicio Field 2 - Cómo quieres entregar los recordatorios? -->
+          <!-- Inicio Field 2 - Descripción del plan sugerido por horas -->
+            <div id="plan-sugerido" class="row">              
+              <fieldset>
+                <legend ><h2>Sugerimos:</h2></legend>
+
+                <div class="small-centered">
+
+
+                  <div class="columns medium-4 rnd">
+                    <input type="radio" id="planSugerido1" value="planSugerido1" name="planSugerido" >
+                    <label for="planSugerido1"><h3 class="text-center">Plan 1</h3><br>
+                      <ul>
+                        <li>Hasta 70 invitados</li>
+                        <li>2 horas</li>
+                        
+                      </ul>
+                    </label>
+                  </div>
+
+                  <div class="columns medium-4 rnd">
+                    <input type="radio" id="planSugerido2" value="planSugerido2" name="planSugerido" >
+                    <label for="planSugerido2"><h3 class="text-center">Plan 2</h3><br>
+                      <ul>
+                        <li>De 71 a 119 invitados</li>
+                        <li>3 horas</li>
+                        
+                      </ul>
+                    </label>
+                  </div>
+
+                  <div class="columns medium-4 rnd">
+                    <input type="radio" id="planSugerido3" value="planSugerido3" name="planSugerido" >
+                    <label for="planSugerido3"><h3 class="text-center">Plan 3</h3><br>
+                      <ul>
+                        <li>De 120 a 170 invitados</li>
+                        <li>4 horas</li>
+                        
+                      </ul>
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset>
+              <hr>
+            </div>
+
+
+          <!-- Fin Field 2 - Descripción del plan sugerido por horas -->
+
+          <!-- Inicio Field 3 - Cómo quieres entregar los recordatorios? -->
           <div id="opciones">
             <div class="row">              
               <fieldset>
@@ -122,19 +178,20 @@
                     <input type="radio" id="invitadosSobre" value="invitados-sobre" name="recordatorios-invitados">
                     <label for="invitadosSobre"><img src="img/planes_tira_sobre.svg"><br>Sobre</label>
                   </div>
+
                   <div class="columns medium-4">                  
                     <input type="radio" id="invitadosPortarretratos" value="invitados-portarretratos" name="recordatorios-invitados">
                     <label for="invitadosPortarretratos"> <img src="img/planes_tira_portarretratos.svg"><br>Portarretratos</label>
                   </div>
-                  <!-- </div> -->
+
                 </div>
 
               </fieldset>
             </div>
 
-            <!-- Fin Field 2 - Cómo quieres entregar los recordatorios? -->
+            <!-- Fin Field 3 - Cómo quieres entregar los recordatorios? -->
 
-            <!-- Inicio Field 3 - Cómo quieres recibir tus recordatorios? -->
+            <!-- Inicio Field 4 - Cómo quieres recibir tus recordatorios? -->
             <div class="row">
               <fieldset>
                 <legend><h2>Cómo quieres recibir tus recordatorios?</h2></legend>
@@ -159,12 +216,12 @@
             </div>
           </div>
 
-          <!-- Fin Field 3 - Cómo quieres recibir tus recordatorios? -->
+          <!-- Fin Field 4 - Cómo quieres recibir tus recordatorios? -->
 
         </form>
 
         <!-- Fin Form -->
-      </div>
+      
     </div>
 
     <!-- Fin Sección 1 - Forma de input de información -->
@@ -191,6 +248,13 @@
       <div class="row">
         <p id="precio-final" class="columns small-12 text-center lead">Ingresa la cantidad de invitados para obtener el valor.</p>
       </div>
+      <div id="output-caracteristicas" class="row">
+        <ul class="columns small-8 small-centered" >
+          <li id="output-horas">2 horas</li>
+          <li id="output-invitados"></li>
+          <li id="output-cliente"></li>
+        </ul>
+      </div>
     </div>
 
     <!-- Fin Sección 3 - Resultados de cálculo de precio -->
@@ -199,7 +263,7 @@
     <!-- Fin APP -->
 
     <!-- Link a contacto -->
-    <div class="planes-page-4">
+    <div id="reserva" class="planes-page-4">
       <div class="row"> 
         <h2 class=" columns small-12">¡Reserva la fotocabina para tu matrimonio!</h2>
 
@@ -216,7 +280,7 @@
     <!-- Link a contacto -->
 
     <!-- ¿Quieres un plan diferente -->
-    <div class="planes-page-5">
+    <div id="plan-diferente" class="planes-page-5">
       <div class="row"> 
         <h2 class=" columns small-12">¿Quieres un plan diferente?</h2>
         <div class="small-11 columns left">
@@ -231,9 +295,9 @@
     <div class="planes-page-6">
       <div class="row"> 
 
-        <h2 class=" columns small-12">Todos nuestros planes incluyen:</h2>
+        <h2 class=" columns small-12"> Todos nuestros planes incluyen:</h2>
 
-        <ul class="disc small-11 columns">
+        <ul class="small-11 columns">
           <li>Fotos ilimitadas.</li>
           <li>Cámara DSLR (no te dejes engañar, una webcam o una cámara casera no hacen lo mismo).</li>
           <li>2 asesores el día del evento.</li>
