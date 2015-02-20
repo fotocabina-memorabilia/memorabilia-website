@@ -6,6 +6,7 @@
 //Hide hints & important divs
 $(".span-planes").hide();
 $("#plan-especial").hide();
+$("#output-caracteristicas").hide();
 
 // Variables
 
