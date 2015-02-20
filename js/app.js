@@ -42,6 +42,16 @@ var precioFinal = precioBase + precioRecordatoriosInvitados*parseInt($cantidadDe
 
 // Functions
 
+function actualizarPrecioSugerido(){
+	if($("#planSugerido1").is(":checked")){
+		precioBase = plan1;
+	} else if($("#planSugerido2").is(":checked")){
+		precioBase = plan2;
+	} else {
+		precioBase = plan3;
+	}
+}
+
 function actualizarRecordatorioInvitados(){
 
 	if($('#invitadosClasico').is(':checked')){
@@ -187,7 +197,7 @@ $labels.click(function(){
 	
 	setTimeout(actualizarRecordatorioInvitados, 200);
 	setTimeout(actualizarRecordatorioCliente, 200);
-
+	setTimeout(actualizarPrecioSugerido, 200);
 	setTimeout(function(){
 		actualizarPrecioFinal(precioBase, precioRecordatoriosInvitados, precioRecordatoriosCliente, parseInt($cantidadDeInvitados.val()));
 	}, 200);
