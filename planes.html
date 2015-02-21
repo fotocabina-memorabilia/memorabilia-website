@@ -88,14 +88,14 @@
     <!-- Inicio Sección 1 - Forma de input de información -->
 
     <div class="planes-page-1">
-      
 
-        <!-- Inicio Form -->
 
-        <form id="formulario" action = "index.html" method = "post">
+      <!-- Inicio Form -->
 
-          <!-- Inicio Field 1 - Cuántos invitados tienes? -->
-      <div class="row">
+      <form id="formulario" action = "index.html" method = "post">
+
+        <!-- Inicio Field 1 - Cuántos invitados tienes? -->
+        <div class="row">
           <fieldset>
             <legend><h2>Cuántos invitados tienes?</h2></legend>
             <div class="columns small-6 large-offset-3 small-centered">
@@ -104,123 +104,127 @@
               <span class="span-planes">Debes escribir un número superior a 1</span>
               <!-- <div id="tooltip-mobile" class="planes-page-5 small-centered show-for-small-only">Debes escribir un número superior a 1</div> -->
             </div>
-            </fieldset>
-      </div>
-          
-
-          <!-- Fin Field 1 - Cuántos invitados tienes? --> 
-
-          <!-- Inicio Field 2 - Descripción del plan sugerido por horas -->
-            <div id="plan-sugerido" class="row">              
-              <fieldset>
-                <legend>
-                  <!-- <h2>Sugerimos:</h2> -->
-                  <p>Sugerimos nuestros planes dependiendo de las cantidad de invitados que tengas. Sin embargo, si quieres otro plan diferente, puedes elegirlo.</p>
-                </legend>
-
-                <div class="columns  small-centered">
+          </fieldset>
+        </div>
 
 
-                  <div class="columns medium-4">
-                    <input type="radio" id="planSugerido1" value="planSugerido1" name="planSugerido" >
-                    <label for="planSugerido1"><h3 class="text-center rnd">Plan 1</h3>
-                      <ul>
-                        <li>2 horas</li>
-                        <li>Sugerido hasta 70 invitados</li>
-                      </ul>
-                    </label>
-                  </div>
+        <!-- Fin Field 1 - Cuántos invitados tienes? --> 
 
-                  <div class="columns medium-4">
-                    <input type="radio" id="planSugerido2" value="planSugerido2" name="planSugerido" >
-                    <label for="planSugerido2"><h3 class="text-center rnd">Plan 2</h3>
-                      <ul>
-                        <li>3 horas</li>
-                        <li>Sugerido de 71 a 119 invitados</li>
-                      </ul>
-                    </label>
-                  </div>
-
-                  <div class="columns medium-4">
-                    <input type="radio" id="planSugerido3" value="planSugerido3" name="planSugerido" >
-                    <label for="planSugerido3"><h3 class="text-center rnd">Plan 3</h3>
-                      <ul>
-                        <li>4 horas</li>
-                        <li>Sugerido de 120 a 170 invitados</li>
-                      </ul>
-                    </label>
-                  </div>
-
-                </div>
-
-              </fieldset>
-              <hr>
-            </div>
-
-
-          <!-- Fin Field 2 - Descripción del plan sugerido por horas -->
-
-          <!-- Inicio Field 3 - Cómo quieres entregar los recordatorios? -->
-          <div id="opciones">
-            <div class="row">              
-              <fieldset>
-                <legend><h2>Cómo quieres entregar los recordatorios a tus invitados?</h2></legend>
-
-                <div class="text-center" id="opciones-invitados">
-
-
-                  <div class="columns medium-4">
-                    <input type="radio" id="invitadosClasico" value="invitados-clasico" name="recordatorios-invitados" checked>
-                    <label for="invitadosClasico"><img src="img/planes_tira_sola.svg"><br>Clásico</label>
-                  </div>
-
-                  <div class="columns medium-4">                  
-                    <input type="radio" id="invitadosSobre" value="invitados-sobre" name="recordatorios-invitados">
-                    <label for="invitadosSobre"><img src="img/planes_tira_sobre.svg"><br>Sobre</label>
-                  </div>
-
-                  <div class="columns medium-4">                  
-                    <input type="radio" id="invitadosPortarretratos" value="invitados-portarretratos" name="recordatorios-invitados">
-                    <label for="invitadosPortarretratos"> <img src="img/planes_tira_portarretratos.svg"><br>Portarretratos</label>
-                  </div>
-
-                </div>
-
-              </fieldset>
-            </div>
-
-            <!-- Fin Field 3 - Cómo quieres entregar los recordatorios? -->
-
-            <!-- Inicio Field 4 - Cómo quieres recibir tus recordatorios? -->
+        <!-- Inicio Field 2 - Descripción del plan sugerido por horas -->
+        <div id="plan-sugerido" >              
+          <fieldset>
             <div class="row">
-              <fieldset>
-                <legend><h2>Cómo quieres recibir tus recordatorios?</h2></legend>
+              <legend>
+                <!-- <h2>Sugerimos:</h2> -->
+                <p class="columns small-12">Sugerimos nuestros planes dependiendo de las cantidad de invitados que tengas. Sin embargo, si quieres otro plan diferente, puedes elegirlo.</p>
+              </legend>
+            </div>
 
-                <div class="text-center" id="opciones-cliente">              
+            <div class="row text-center">
 
-                  <div class="columns medium-4">
-                    <input type="radio" id="clienteClasico" value="cliente-clasico" name="recordatorios-cliente" checked >
-                    <label for="clienteClasico"> <img src="img/planes_tiras_many.svg"><br>Clásico</label>
-                  </div>
-                  <div class="columns medium-4">
-                    <input type="radio" id="clienteCuadro" value="cliente-cuadro" name="recordatorios-cliente">
-                    <label for="clienteCuadro"> <img src="img/planes_marco.svg"><br>Cuadro</label>
-                  </div>
-                  <div class="columns medium-4">
-                    <input type="radio" id="clienteAlbum" value="cliente-album" name="recordatorios-cliente">
-                    <label for="clienteAlbum"><img src="img/planes_libro.svg"> <br>Álbum</label>
-                  </div>
+              <div class="columns medium-4 small-centered medium-uncentered columns">
+                <input type="radio" id="planSugerido1" value="planSugerido1" name="planSugerido" >
+                <label for="planSugerido1"><h3 class="rnd">Plan 1</h3>
+                  <p> Plan de 2 horas sugerido para hasta 70 invitados</p>
+                  <!-- <ul>
+                    <li>2 horas</li>
+                    <li>Sugerido hasta 70 invitados</li>
+                  </ul> -->
+                </label>
+              </div>
+
+              <div class="columns medium-4 small-centered medium-uncentered columns">
+                <input type="radio" id="planSugerido2" value="planSugerido2" name="planSugerido" >
+                <label for="planSugerido2"><h3 class="rnd">Plan 2</h3>
+                  <p>Plan de 3 horas sugerido para 71 hasta 119 invitados</p>
+<!--                   <ul>
+                    <li>2 horas</li>
+                    <li>Sugerido hasta 70 invitados</li>
+                  </ul> -->
+                </label>
+              </div>
+
+              <div class="columns medium-4 small-centered medium-uncentered columns">
+                <input type="radio" id="planSugerido3" value="planSugerido3" name="planSugerido" >
+                <label for="planSugerido3"><h3 class="rnd">Plan 3</h3>
+                  <p>Plan de 4 horas sugerido para 120 a 170 invitados</p>
+               <!--    <ul>
+                    <li>2 horas</li>
+                    <li>Sugerido hasta 70 invitados</li>
+                  </ul> -->
+                </label>
+              </div>
+<hr>
+            </div>
+
+          </fieldset>
+          
+        </div>
+
+
+        <!-- Fin Field 2 - Descripción del plan sugerido por horas -->
+
+        <!-- Inicio Field 3 - Cómo quieres entregar los recordatorios? -->
+        <div id="opciones">
+          <div class="row">              
+            <fieldset>
+              <legend><h2>Cómo quieres entregar los recordatorios a tus invitados?</h2></legend>
+
+              <div class="text-center" id="opciones-invitados">
+
+
+                <div class="columns medium-4">
+                  <input type="radio" id="invitadosClasico" value="invitados-clasico" name="recordatorios-invitados" checked>
+                  <label for="invitadosClasico"><img src="img/planes_tira_sola.svg"><br>Clásico</label>
                 </div>
 
-              </fieldset>
-            </div>
+                <div class="columns medium-4">                  
+                  <input type="radio" id="invitadosSobre" value="invitados-sobre" name="recordatorios-invitados">
+                  <label for="invitadosSobre"><img src="img/planes_tira_sobre.svg"><br>Sobre</label>
+                </div>
+
+                <div class="columns medium-4">                  
+                  <input type="radio" id="invitadosPortarretratos" value="invitados-portarretratos" name="recordatorios-invitados">
+                  <label for="invitadosPortarretratos"> <img src="img/planes_tira_portarretratos.svg"><br>Portarretratos</label>
+                </div>
+
+              </div>
+
+            </fieldset>
           </div>
 
-          <!-- Fin Field 4 - Cómo quieres recibir tus recordatorios? -->
+          <!-- Fin Field 3 - Cómo quieres entregar los recordatorios? -->
 
-        </form>
+          <!-- Inicio Field 4 - Cómo quieres recibir tus recordatorios? -->
+          <div class="row">
+            <fieldset>
+              <legend><h2>Cómo quieres recibir tus recordatorios?</h2></legend>
 
-        <!-- Fin Form -->
+              <div class="text-center" id="opciones-cliente">              
+
+                <div class="columns medium-4">
+                  <input type="radio" id="clienteClasico" value="cliente-clasico" name="recordatorios-cliente" checked >
+                  <label for="clienteClasico"> <img src="img/planes_tiras_many.svg"><br>Clásico</label>
+                </div>
+                <div class="columns medium-4">
+                  <input type="radio" id="clienteCuadro" value="cliente-cuadro" name="recordatorios-cliente">
+                  <label for="clienteCuadro"> <img src="img/planes_marco.svg"><br>Cuadro</label>
+                </div>
+                <div class="columns medium-4">
+                  <input type="radio" id="clienteAlbum" value="cliente-album" name="recordatorios-cliente">
+                  <label for="clienteAlbum"><img src="img/planes_libro.svg"> <br>Álbum</label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Fin Field 4 - Cómo quieres recibir tus recordatorios? -->
+
+      </form>
+
+      <!-- Fin Form -->
       
     </div>
 
