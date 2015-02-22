@@ -7,6 +7,7 @@
 $(".span-planes").hide();
 $("#plan-especial").hide();
 $("#output-caracteristicas").hide();
+$("#elejimosPlan").hide();
 
 // Variables
 
@@ -133,14 +134,14 @@ $cantidadDeInvitados.keyup(function(){
 
 		if (cantidadDeInvitados<=0 || isNaN($cantidadDeInvitados.val()) ||  $cantidadDeInvitados.val().length === 0){
 
-			$(".span-planes").show();
-			// $("#tooltip-mobile").show();
+			$(".span-planes").show("fast");
 			$outputPrecio.html("Ingresa la cantidad de invitados para obtener el valor.");
 			$('#planSugerido1').prop('checked', false);
 			$('#planSugerido2').prop('checked', false);
 			$('#planSugerido3').prop('checked', false);
 
-			$("#output-caracteristicas").hide();
+			$("#output-caracteristicas").hide("fast");
+			$("#elejimosPlan").hide();
 			
 		} 
 		else if (cantidadDeInvitados>170) {
@@ -151,7 +152,7 @@ $cantidadDeInvitados.keyup(function(){
 			$("#plan-diferente").hide();
 			$("#reserva").hide();
 			$("#plan-sugerido").hide();
-			$("#plan-especial").show();
+			$("#plan-especial").show("fast");
 
 			$("#output-caracteristicas").hide();
 		}
@@ -186,6 +187,9 @@ $cantidadDeInvitados.keyup(function(){
 				$outputHoras.html("4 horas");
 
 			}
+
+			$("#elejimosPlan").show("slow");
+			$("#elejimosPlan").html("¡Elejimos un plan perfecto para " + cantidadDeInvitados + " invitados! Sin embargo, si quieres escoger un plan diferente, puedes hacerlo a continuación:");
 			actualizarPrecioFinal(precioBase, precioRecordatoriosInvitados, precioRecordatoriosCliente, parseInt($cantidadDeInvitados.val()));
 		}
 
