@@ -43,6 +43,17 @@ var precioFinal = precioBase + precioRecordatoriosInvitados*parseInt($cantidadDe
 
 // Functions
 
+// ====== Start --> Este código previene que la tecla Enter mande la forma
+
+ $('#cantidadDeInvitados').keypress(function(event){
+    
+    if (event.keyCode === 10 || event.keyCode === 13) {
+        event.preventDefault();
+    }
+  });
+
+ // ====== Fin --> Este código previene que la tecla Enter mande la forma
+
 function actualizarPrecioSugerido(){
 	if($("#planSugerido1").is(":checked")){
 		precioBase = plan1;
@@ -52,6 +63,7 @@ function actualizarPrecioSugerido(){
 		precioBase = plan3;
 	}
 }
+
 
 function actualizarRecordatorioInvitados(){
 
