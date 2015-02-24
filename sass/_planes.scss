@@ -24,7 +24,7 @@ div[class*="planes-page-"] {
 
 	a {
 		color: $cafe-oscuro;
-		transition-duration: 0.1s;
+		transition-duration: 0.3s;
 
 		&:hover{
 			color: $p-color-alt;
@@ -134,7 +134,7 @@ input:focus{
 #opciones-invitados label:hover, #opciones-cliente label:hover, input[type="radio"]:checked + label {
 	img{
 		opacity: 1;
-		transition-duration: 0.1s;
+		transition-duration: 0.3s;
 	}
 }
 
@@ -151,7 +151,7 @@ input:focus{
 #plan-sugerido label:hover, #plan-sugerido input[type="radio"]:checked + label{
 	.rnd{
 		background-color: $azul;
-		transition-duration: 0.1s;
+		transition-duration: 0.3s;
 	}
 }
 
