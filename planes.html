@@ -100,8 +100,8 @@
             <legend><h2>1. Cuántos invitados tienes?</h2></legend>
             <div class="columns small-10 large-6 large-offset-3 small-centered">
               <label for="cantidadDeInvitados"> Ingresa la cantidad en números</label>
-              <input type="tel" id="cantidadDeInvitados" placeholder="Ej. 80">
-              <span class="span-planes">Debes escribir un número superior a 1</span>
+              <input type="tel" id="cantidadDeInvitados" placeholder="80">
+              <span class="span-invitados">Debes escribir un número superior a 1</span>
               <!-- <div id="tooltip-mobile" class="planes-page-5 small-centered show-for-small-only">Debes escribir un número superior a 1</div> -->
             </div>
           </fieldset>
@@ -123,6 +123,7 @@
             <div class="row text-center">
 
               <div class="columns medium-4 small-centered medium-uncentered">
+                <!-- <span class="span-planes">Elejimos este plan para ti</span> -->
                 <input type="radio" id="planSugerido1" value="planSugerido1" name="planSugerido" >
                 <label for="planSugerido1"><h3 class="rnd">Plan 1</h3>
                   <p> Plan de 2 horas sugerido para hasta 70 invitados</p>
@@ -134,6 +135,7 @@
               </div>
 
               <div class="columns medium-4 small-centered medium-uncentered">
+                
                 <input type="radio" id="planSugerido2" value="planSugerido2" name="planSugerido" >
                 <label for="planSugerido2"><h3 class="rnd">Plan 2</h3>
                   <p>Plan de 3 horas sugerido para 71 hasta 119 invitados</p>
@@ -168,7 +170,11 @@
         <div id="opciones">
           <div class="row">              
             <fieldset>
-              <legend><h2>2. Cómo quieres entregar los recordatorios a tus invitados?</h2></legend>
+              <legend>
+                <h2>2. Cómo quieres entregar los recordatorios a tus invitados?</h2>
+                <p>Si no sabes aún cómo entregar los recordatorios a tus invitados, entra a nuestra sección de <a href="/recordatorios.html">recordatorios</a>.</p>
+              </legend>
+
 
               <div class="text-center" id="opciones-invitados">
 
@@ -198,7 +204,10 @@
           <!-- Inicio Field 4 - Cómo quieres recibir tus recordatorios? -->
           <div class="row">
             <fieldset>
-              <legend><h2>3. Cómo quieres recibir tus recordatorios?</h2></legend>
+              <legend>
+                <h2>3. Cómo quieres recibir tus recordatorios?</h2>
+                <p>Si no sabes aún cómo recibir tus recordatorios, entra a nuestra sección de <a href="/recordatorios.html">recordatorios</a>.</p>
+              </legend>
 
               <div class="text-center" id="opciones-cliente">              
 

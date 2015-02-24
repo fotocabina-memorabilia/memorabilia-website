@@ -4,7 +4,7 @@
 // Solución: Agregar interactividad a la página para que el usurario conozca el costo de su plan personalizado.
 
 //Hide hints & important divs
-$(".span-planes").hide();
+$(".span-invitados").hide();
 $("#plan-especial").hide();
 $("#output-caracteristicas").hide();
 $("#elejimosPlan").hide();
@@ -23,7 +23,8 @@ var $outputInvitados = $("#output-invitados");
 
 var $outputCliente = $("#output-cliente");
 
-//SERGIO
+var nombrePlan;
+
 var plan1 = 650000;
 var plan2 = 770000;
 var plan3 = 840000;
@@ -69,15 +70,15 @@ function actualizarRecordatorioInvitados(){
 
 	if($('#invitadosClasico').is(':checked')){
 		precioRecordatoriosInvitados = precioInvitadoClasico;
-		$outputInvitados.html("Recordatorios clásicos para invitados");
+		$outputInvitados.html("Para tus invitados: Recordatorios clásicos.");
 		// console.log(precioRecordatoriosInvitados);
 	} else if($('#invitadosSobre').is(':checked')){
 		precioRecordatoriosInvitados = precioInvitadoSobre;
-		$outputInvitados.html("Fotos en sobre personalizados para invitados");
+		$outputInvitados.html("Para tus invitados: Tiras de fotos entregadas en un sobre personalizado.");
 		// console.log(precioRecordatoriosInvitados);
 	} else {
 		precioRecordatoriosInvitados = precioInvitadoPortarretratos;
-		$outputInvitados.html("Fotos con portarretratos para invitados");
+		$outputInvitados.html("Para tus invitados: Tiras de fotos entregadas en un portarretratos de papel.");
 		// console.log(precioRecordatoriosInvitados);
 	}
 }
@@ -86,15 +87,15 @@ function actualizarRecordatorioCliente(){
 
 	if($('#clienteClasico').is(':checked')){
 		precioRecordatoriosCliente = precioClienteClasico;
-		$outputCliente.html("Recordatorios clásicos para ti");
+		$outputCliente.html("Para ti: Recordatorios clásicos.");
 		// console.log(precioRecordatoriosCliente);
 	} else if($('#clienteCuadro').is(':checked')){
 		precioRecordatoriosCliente = precioClienteCuadro;
-		$outputCliente.html("Marco con todas las fotos colgadas");
+		$outputCliente.html("Para ti: Marco con todas las tiras de fotos colgadas.");
 		// console.log(precioRecordatoriosCliente);
 	} else {
 		precioRecordatoriosCliente = precioClienteAlbum;
-		$outputCliente.html("Álbum fotográfico con firmas de los asistentes");
+		$outputCliente.html("Para ti: Álbum fotográfico con todas las tiras de fotos y firmas de los asistentes.");
 		// console.log(precioRecordatoriosCliente);
 	}
 }
@@ -146,7 +147,7 @@ $cantidadDeInvitados.keyup(function(){
 
 		if (cantidadDeInvitados<=0 || isNaN($cantidadDeInvitados.val()) ||  $cantidadDeInvitados.val().length === 0){
 
-			$(".span-planes").show("fast");
+			$(".span-invitados").show("fast");
 			$outputPrecio.html("Ingresa la cantidad de invitados para obtener el valor.");
 			$('#planSugerido1').prop('checked', false);
 			$('#planSugerido2').prop('checked', false);
@@ -158,7 +159,7 @@ $cantidadDeInvitados.keyup(function(){
 		} 
 		else if (cantidadDeInvitados>170) {
 
-			$(".span-planes").hide();
+			$(".span-invitados").hide();
 			$("#opciones").hide();
 			$("#costo-final-del-plan").hide();
 			$("#plan-diferente").hide();
@@ -170,7 +171,7 @@ $cantidadDeInvitados.keyup(function(){
 		}
 		else {
 			
-			$(".span-planes").hide();
+			$(".span-invitados").hide();
 			$("#opciones").show();
 			$("#plan-especial").hide();
 			$("#costo-final-del-plan").show();
@@ -186,22 +187,25 @@ $cantidadDeInvitados.keyup(function(){
 				precioBase = plan1;
 				$('#planSugerido1').prop('checked', true);
 				$outputHoras.html("2 horas");
+				nombrePlan = "Plan 1";
 
 			} 
 			else if(cantidadDeInvitados > 70 && cantidadDeInvitados <= 119){
 				precioBase = plan2;
 				$('#planSugerido2').prop('checked', true);
 				$outputHoras.html("3 horas");
+				nombrePlan = "Plan 2";
 			} 
 			else {
 				precioBase = plan3;
 				$('#planSugerido3').prop('checked', true);
 				$outputHoras.html("4 horas");
+				nombrePlan = "Plan 3";
 
 			}
 
 			$("#elejimosPlan").show("slow");
-			$("#elejimosPlan").html("¡Elejimos un plan perfecto para " + cantidadDeInvitados + " invitados! Sin embargo, si quieres escoger un plan diferente, puedes hacerlo a continuación:");
+			$("#elejimosPlan").html("¡Elejimos para ti el " + nombrePlan + ", ideal para " + cantidadDeInvitados + " invitados! Sin embargo, si quieres escoger un plan diferente, puedes hacerlo a continuación:");
 			actualizarPrecioFinal(precioBase, precioRecordatoriosInvitados, precioRecordatoriosCliente, parseInt($cantidadDeInvitados.val()));
 		}
 
