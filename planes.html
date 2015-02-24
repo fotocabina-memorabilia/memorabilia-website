@@ -96,8 +96,8 @@
 
         <!-- Inicio Field 1 - Cuántos invitados tienes? -->
         <div class="row">
-          <fieldset>
-            <legend><h2>1. Cuántos invitados tienes?</h2></legend>
+          <fieldset class="hidden-for-small-up">
+            <legend><h2>1. ¿Cuántos invitados tienes?</h2></legend>
             <div class="columns small-10 large-6 large-offset-3 small-centered">
               <label for="cantidadDeInvitados"> Ingresa la cantidad en números</label>
               <input type="tel" id="cantidadDeInvitados" placeholder="80">
@@ -113,8 +113,12 @@
         <!-- Inicio Field 2 - Descripción del plan sugerido por horas -->
         <div id="plan-sugerido" >              
           <fieldset>
+
             <div class="row">
               <legend>
+                <noscript>
+              <h2>1. ¿Cuántos invitados tienes?</h2>
+            </noscript>
                 <!-- <h2>Sugerimos:</h2> -->
                 <p id="elejimosPlan" class="columns small-12"></p>
               </legend>
@@ -127,22 +131,16 @@
                 <input type="radio" id="planSugerido1" value="planSugerido1" name="planSugerido" >
                 <label for="planSugerido1"><h3 class="rnd">Plan 1</h3>
                   <p> Plan de 2 horas sugerido para hasta 70 invitados</p>
-                  <!-- <ul>
-                    <li>2 horas</li>
-                    <li>Sugerido hasta 70 invitados</li>
-                  </ul> -->
+                  <noscript class="lead">Precio: 650,000 COP</noscript>
                 </label>
               </div>
 
               <div class="columns medium-4 small-centered medium-uncentered">
-                
+
                 <input type="radio" id="planSugerido2" value="planSugerido2" name="planSugerido" >
                 <label for="planSugerido2"><h3 class="rnd">Plan 2</h3>
                   <p>Plan de 3 horas sugerido para 71 hasta 119 invitados</p>
-<!--                   <ul>
-                    <li>2 horas</li>
-                    <li>Sugerido hasta 70 invitados</li>
-                  </ul> -->
+                  <noscript class="lead">Precio: 770,000 COP</noscript>
                 </label>
               </div>
 
@@ -150,13 +148,10 @@
                 <input type="radio" id="planSugerido3" value="planSugerido3" name="planSugerido" >
                 <label for="planSugerido3"><h3 class="rnd">Plan 3</h3>
                   <p>Plan de 4 horas sugerido para 120 a 170 invitados</p>
-               <!--    <ul>
-                    <li>2 horas</li>
-                    <li>Sugerido hasta 70 invitados</li>
-                  </ul> -->
+                  <noscript class="lead">Precio: 840,000 COP</noscript>
                 </label>
               </div>
-<hr>
+              <hr>
             </div>
 
           </fieldset>
@@ -171,8 +166,8 @@
           <div class="row">              
             <fieldset>
               <legend>
-                <h2>2. Cómo quieres entregar los recordatorios a tus invitados?</h2>
-                <p>Si no sabes aún cómo entregar los recordatorios a tus invitados, entra a nuestra sección de <a href="/recordatorios.html">recordatorios</a>.</p>
+                <h2>2. ¿Cómo quieres entregar los recordatorios a tus invitados?</h2>
+                <p>Si aún no sabes cómo entregarlos, entra a nuestra sección de <a href="/recordatorios.html">recordatorios</a>.</p>
               </legend>
 
 
@@ -182,16 +177,25 @@
                 <div class="columns medium-4">
                   <input type="radio" id="invitadosClasico" value="invitados-clasico" name="recordatorios-invitados" checked>
                   <label for="invitadosClasico"><img src="img/planes_tira_sola.svg"><br>Clásico</label>
+                  <noscript>
+                    <p>Precio: Incluido en el precio del plan.</p>
+                  </noscript>
                 </div>
 
                 <div class="columns medium-4">                  
                   <input type="radio" id="invitadosSobre" value="invitados-sobre" name="recordatorios-invitados">
                   <label for="invitadosSobre"><img src="img/planes_tira_sobre.svg"><br>Sobre</label>
+                  <noscript>
+                    <p>Precio: 1000 COP por unidad</p>
+                  </noscript>
                 </div>
 
                 <div class="columns medium-4">                  
                   <input type="radio" id="invitadosPortarretratos" value="invitados-portarretratos" name="recordatorios-invitados">
                   <label for="invitadosPortarretratos"> <img src="img/planes_tira_portarretratos.svg"><br>Portarretratos</label>
+                  <noscript>
+                    <p>Precio: 1200 COP por unidad</p>
+                  </noscript>
                 </div>
 
               </div>
@@ -205,8 +209,8 @@
           <div class="row">
             <fieldset>
               <legend>
-                <h2>3. Cómo quieres recibir tus recordatorios?</h2>
-                <p>Si no sabes aún cómo recibir tus recordatorios, entra a nuestra sección de <a href="/recordatorios.html">recordatorios</a>.</p>
+                <h2>3. ¿Cómo quieres recibir tus recordatorios?</h2>
+                <p>Si aún no sabes cómo quieres los tuyos, entra a nuestra sección de <a href="/recordatorios.html">recordatorios</a>.</p>
               </legend>
 
               <div class="text-center" id="opciones-cliente">              
@@ -214,14 +218,23 @@
                 <div class="columns medium-4">
                   <input type="radio" id="clienteClasico" value="cliente-clasico" name="recordatorios-cliente" checked >
                   <label for="clienteClasico"> <img src="img/planes_tiras_many.svg"><br>Clásico</label>
+                  <noscript>
+                    <p>Precio: Incluido en el precio del plan.</p>
+                  </noscript>
                 </div>
                 <div class="columns medium-4">
                   <input type="radio" id="clienteCuadro" value="cliente-cuadro" name="recordatorios-cliente">
                   <label for="clienteCuadro"> <img src="img/planes_marco.svg"><br>Cuadro</label>
+                  <noscript>
+                    <p>Precio: 110,000 COP</p>
+                  </noscript>
                 </div>
                 <div class="columns medium-4">
                   <input type="radio" id="clienteAlbum" value="cliente-album" name="recordatorios-cliente">
                   <label for="clienteAlbum"><img src="img/planes_libro.svg"> <br>Álbum</label>
+                  <noscript>
+                    <p>Precio: 160,000 COP</p>
+                  </noscript>
                 </div>
               </div>
 
@@ -240,7 +253,7 @@
     <!-- Fin Sección 1 - Forma de input de información -->
 
     <!-- Inicio Sección 2 - Si hay mas de 170 invitados -->
-    <div id="plan-especial" class="planes-page-2">
+    <div id="plan-especial" class="planes-page-2 hidden-for-small-up">
       <div class="row">
         <h2 class="columns small-12 text-center">Haz un plan especial</h2>
       </div>
@@ -254,7 +267,7 @@
 
     <!-- Inicio Sección 3 - Resultados de cálculo de precio -->
 
-    <div id="costo-final-del-plan" class="planes-page-3">
+    <div id="costo-final-del-plan" class="planes-page-3 hidden-for-small-up">
       <div class="row">
         <h2 class="columns small-12 text-center">El costo de tu plan es:</h2>
       </div>

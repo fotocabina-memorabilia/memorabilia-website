@@ -8,6 +8,7 @@ $(".span-invitados").hide();
 $("#plan-especial").hide();
 $("#output-caracteristicas").hide();
 $("#elejimosPlan").hide();
+$(".hidden-for-small-up").removeClass("hidden-for-small-up");
 
 // Variables
 
@@ -205,7 +206,7 @@ $cantidadDeInvitados.keyup(function(){
 			}
 
 			$("#elejimosPlan").show("slow");
-			$("#elejimosPlan").html("¡Elejimos para ti el " + nombrePlan + ", ideal para " + cantidadDeInvitados + " invitados! Sin embargo, si quieres escoger un plan diferente, puedes hacerlo a continuación:");
+			$("#elejimosPlan").html("¡Elejimos para ti el " + nombrePlan + ", que es ideal para " + cantidadDeInvitados + " invitados! Sin embargo, si quieres escoger un plan diferente, puedes hacerlo a continuación:");
 			actualizarPrecioFinal(precioBase, precioRecordatoriosInvitados, precioRecordatoriosCliente, parseInt($cantidadDeInvitados.val()));
 		}
 
